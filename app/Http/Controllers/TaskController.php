@@ -46,4 +46,11 @@ class TaskController extends Controller
 
         return 204; // No content
     }
+    public function destroy3($id)
+    {
+        $task = Task::findOrFail($id);
+        $task->delete();
+
+        return 204; // No content
+    }
 }
