@@ -10,8 +10,8 @@ class TaskController extends Controller
 {
     public function index()
     {
-        $employees = Employee::all();
-        dd($employees);
+        $data['employees'] = Employee::orderBy('id', 'desc')->simplePaginate(10);
+        return view('employee.list', $data);
     }
    
 }
